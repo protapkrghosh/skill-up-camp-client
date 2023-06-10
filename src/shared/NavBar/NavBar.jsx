@@ -1,18 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/skill-up-camp.png"
-// import { useContext } from "react";
-// import { AuthContext } from "../../providers/AuthProvider";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const NavBar = () => {
-   // const { users, userLogOut } = useContext(AuthContext)
+   const { users, userLogOut } = useContext(AuthContext)
 
-   // const handleLogOut = () => {
-   //    userLogOut()
-   //       .then()
-   //       .catch((error) => {
-   //          console.log(error)
-   //       });
-   // }
+   const handleLogOut = () => {
+      userLogOut()
+         .then()
+         .catch((error) => {
+            console.log(error)
+         });
+   }
 
    const navItems = <>
       <NavLink to="/" className='text-[18px] mr-5' style={({ isActive, isPending }) => {
@@ -27,16 +27,16 @@ const NavBar = () => {
          return { fontWeight: isActive ? "bold" : "", color: isPending ? "red" : "#006d77", };
       }}>  Classes </NavLink>
 
-      {/* {users && <> */}
+      {users && <>
          <NavLink to="/add-toy" className='text-[18px] mr-5' style={({ isActive, isPending }) => {
             return { fontWeight: isActive ? "bold" : "", color: isPending ? "red" : "#006d77", };
-      }}> Dashboard </NavLink>
-      {/* </>} */}
+         }}> Dashboard </NavLink>
+      </>}
    </>
 
    return (
       <div>
-         <div className="navbar bg-base-100 border-b-2 shadow-sm fixed z-10">
+         <div className="navbar bg-base-100 border-b-2 shadow-sm">
             <div className="navbar-start">
                <div className="dropdown">
                   <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -57,21 +57,23 @@ const NavBar = () => {
             </div>
 
             <div className="navbar-end">
-               
-                  <div className="tooltip tooltip-left mr-2" data-tip="">
-                     <div className="avatar online">
-                        <div className="w-10 rounded-full">
-                           <img src="" />
-                        </div>
+
+               {users &&
+                  <div className="avatar online">
+                     <div className="w-10 rounded-full">
+                        <img src={users?.photoURL} />
                      </div>
                   </div>
+               }
 
-               
-                  <button className='btn bg-zinc-500 border-none rounded-sm'>Log Out</button> :
+
+               {users ?
+                  <button onClick={handleLogOut} className='btn bg-zinc-500 border-none rounded-sm'>Log Out</button> :
                   <Link to="/login">
-                  <button className='btn  bg-zinc-500 border-none rounded-sm'>Log In</button>
+                     <button className='btn  bg-zinc-500 border-none rounded-sm'>Log In</button>
                   </Link>
-               
+               }
+
             </div>
          </div>
       </div>

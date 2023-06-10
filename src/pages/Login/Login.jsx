@@ -2,18 +2,37 @@ import { FcGoogle } from "react-icons/fc";
 import photo from "../../assets/login.gif"
 import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../../providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
    const { register, handleSubmit, formState: { errors } } = useForm();
-   const onSubmit = data => console.log(data);
+   // const onSubmit = data => console.log(data);
    const [passwordShown, setPasswordShown] = useState(false);
+
+   const { signIn } = useContext(AuthContext);
+   const [error, setError] = useState('');
+   const navigate = useNavigate();
+   const location = useLocation();
+   const from = location.state?.from?.pathname || "/";
 
    const togglePassword = () => {
       setPasswordShown(!passwordShown);
    };
+
+   const onSubmit = (data) => {
+      signIn(data.email, data.password)
+         .then((result) => {
+            const user = result.user;
+            // console.log(user);
+            navigate(from, { replace: true });
+         })
+         .catch(error => setError(error.message))
+   }
 
    return (
       <div>
@@ -51,11 +70,13 @@ const Login = () => {
 
                      <div className="form-control mt-6">
                         <input type="submit" value="Login" className="btn bg-[#00b4d8] hover:bg-[#06a5c5] capitalize text-[17px] rounded-md" />
+                        <ToastContainer />
 
                         <button className="btn btn-outline border-cyan-500 hover:border-cyan-800 hover:bg-[#06a5c5] rounded-md text-[16px] capitalize mt-5"><FcGoogle className='mr-2 text-2xl' /> Sign in with Google</button>
                      </div>
                      <small className='text-center mt-2'>Don&lsquo;t have account? <Link to="/register" className='text-[#00b4d8] font-semibold'>Register</Link></small>
                   </form>
+                  <p className="text-red-500 text-center font-semibold -mt-5 mb-5">{error}</p>
                </div>
             </div>
          </div>
