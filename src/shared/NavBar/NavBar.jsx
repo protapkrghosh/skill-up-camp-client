@@ -16,20 +16,20 @@ const NavBar = () => {
 
    const navItems = <>
       <NavLink to="/" className='text-[18px] mr-5' style={({ isActive, isPending }) => {
-         return { fontWeight: isActive ? "bold" : "", color: isPending ? "red" : "#006d77", };
+         return { fontWeight: isActive ? "bold" : "", color: isPending ? "red" : "#06a5c5", };
       }}> Home </NavLink>
 
-      <NavLink to="/all-toy" className='text-[18px] mr-5' style={({ isActive, isPending }) => {
-         return { fontWeight: isActive ? "bold" : "", color: isPending ? "red" : "#006d77", };
+      <NavLink to="/instructors" className='text-[18px] mr-5' style={({ isActive, isPending }) => {
+         return { fontWeight: isActive ? "bold" : "", color: isPending ? "red" : "#06a5c5", };
       }}>  Instructors </NavLink>
 
-      <NavLink to="/all-toy" className='text-[18px] mr-5' style={({ isActive, isPending }) => {
-         return { fontWeight: isActive ? "bold" : "", color: isPending ? "red" : "#006d77", };
+      <NavLink to="/classes" className='text-[18px] mr-5' style={({ isActive, isPending }) => {
+         return { fontWeight: isActive ? "bold" : "", color: isPending ? "red" : "#06a5c5", };
       }}>  Classes </NavLink>
 
       {users && <>
-         <NavLink to="/add-toy" className='text-[18px] mr-5' style={({ isActive, isPending }) => {
-            return { fontWeight: isActive ? "bold" : "", color: isPending ? "red" : "#006d77", };
+         <NavLink to="/dashboard" className='text-[18px] mr-5' style={({ isActive, isPending }) => {
+            return { fontWeight: isActive ? "bold" : "", color: isPending ? "red" : "#06a5c5", };
          }}> Dashboard </NavLink>
       </>}
    </>
@@ -59,7 +59,7 @@ const NavBar = () => {
             <div className="navbar-end">
 
                {users &&
-                  <div className="avatar online">
+                  <div className="avatar online rounded-full ring mr-3">
                      <div className="w-10 rounded-full">
                         <img src={users?.photoURL} />
                      </div>
@@ -68,9 +68,9 @@ const NavBar = () => {
 
 
                {users ?
-                  <button onClick={handleLogOut} className='btn bg-zinc-500 border-none rounded-sm'>Log Out</button> :
+                  <button onClick={handleLogOut} className='btn btn-outline border-[#00b4d8] hover:border-cyan-700 hover:bg-[#06a5c5] rounded-md capitalize text-[16px]'>Log Out</button> :
                   <Link to="/login">
-                     <button className='btn  bg-zinc-500 border-none rounded-sm'>Log In</button>
+                     <button className='btn btn-outline border-[#00b4d8] hover:border-cyan-700 hover:bg-[#06a5c5] rounded-md capitalize text-[16px]'>Log In</button>
                   </Link>
                }
 

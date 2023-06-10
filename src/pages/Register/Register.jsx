@@ -27,9 +27,12 @@ const Register = () => {
    };
 
    const onSubmit = data => {
-      console.log(data);
       registerUser(data.email, data.password)
          .then(result => {
+            updateUserProfile(data.name, data.photo)
+               .then(() => { })
+               .catch(error => {console.log(error)})
+
             toast.success('Registration successful')
             reset();
          })
@@ -80,7 +83,7 @@ const Register = () => {
                               maxLength: 10,
                               pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%*])/
                            })} type={passwordShown ? "text" : "Password"} placeholder="Password" className="input input-bordered rounded-md w-full" />
-                           
+
                            <span onClick={togglePassword} className="absolute right-14 cursor-pointer text-[18px]">{passwordShown ? <FaRegEye /> : <FaRegEyeSlash />}</span>
                         </div>
 
@@ -96,7 +99,7 @@ const Register = () => {
                         </label>
                         <div className="flex justify-center items-center">
                            <input {...register("confirmPassword", { required: true })} type={confirmPasswordShown ? "text" : "Password"} placeholder="Confirm Password" className="input input-bordered rounded-md w-full" />
-                           
+
                            <span onClick={toggleConfirmPassword} className="absolute right-14 cursor-pointer text-[18px]">{confirmPasswordShown ? <FaRegEye /> : <FaRegEyeSlash />}</span>
                         </div>
                         {errors.confirmPassword && <small className="text-rose-600 font-semibold">Confirm Password is required</small>}
