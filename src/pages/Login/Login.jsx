@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
    const { register, handleSubmit, formState: { errors } } = useForm();
@@ -16,6 +17,10 @@ const Login = () => {
 
    return (
       <div>
+         <Helmet>
+            <title>Login | Skill Up Camp</title>
+         </Helmet>
+
          <div className="hero min-h-screen pt-20">
             <div className="hero-content flex-col lg:flex-row">
                <div className="md:w-1/2 lg:text-left md:mr-10">
