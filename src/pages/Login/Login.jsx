@@ -51,7 +51,7 @@ const Login = () => {
                <div className="md:w-1/2 lg:text-left md:mr-10">
                   <img src={photo} alt="" className="w-[700px]" />
                </div>
-
+               
                <div className="card md:w-1/2 max-w-sm border rounded-md bg-base-200">
                   <h2 className='text-4xl text-stone-700 text-center font-bold mt-5'>Login</h2>
                   <form onSubmit={handleSubmit(onSubmit)} className="card-body">
