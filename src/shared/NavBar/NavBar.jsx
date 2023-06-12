@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/skill-up-camp.png"
+import image from "../../assets/placeholder.jpg"
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
@@ -52,7 +53,7 @@ const NavBar = () => {
 
    return (
       <div>
-         <div className="navbar bg-base-100 border-b-2 shadow-sm">
+         <div className="navbar bg-base-100 border-b-2 shadow-sm px-5">
             <div className="navbar-start">
                <div className="dropdown">
                   <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -83,21 +84,18 @@ const NavBar = () => {
                   <svg className="swap-off fill-current w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
                </label>
 
-               {users &&
-                  <div className="avatar online rounded-full ring mr-3">
-                     <div className="w-10 rounded-full">
-                        <img src={users?.photoURL} />
-                     </div>
-                  </div>
-               }
-
                {users ?
-                  <button onClick={handleLogOut} className='btn btn-outline border-[#00b4d8] hover:border-cyan-700 hover:bg-[#06a5c5] rounded-md capitalize text-[16px]'>Log Out</button> :
+                  <button onClick={handleLogOut} className='btn btn-outline border-[#00b4d8] hover:border-cyan-700 hover:bg-[#06a5c5] rounded-md capitalize text-[16px] '>Log Out</button> :
                   <Link to="/login">
                      <button className='btn btn-outline border-[#00b4d8] hover:border-cyan-700 hover:bg-[#06a5c5] rounded-md capitalize text-[16px]'>Log In</button>
                   </Link>
                }
 
+               <div className="avatar rounded-full ring ml-3">
+                  <div className="w-10 rounded-full">
+                     <img src={users && users.photoURL ? users.photoURL : image} />
+                  </div>
+               </div>
             </div>
          </div>
       </div>
