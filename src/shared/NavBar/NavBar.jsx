@@ -93,7 +93,7 @@ const NavBar = () => {
 
                <div className="avatar rounded-full ring ml-3">
                   <div className="w-10 rounded-full">
-                     <img src={users && users.photoURL ? users.photoURL : image} />
+                     <img src={users && users?.photoURL ? users?.photoURL : image} />
                   </div>
                </div>
             </div>

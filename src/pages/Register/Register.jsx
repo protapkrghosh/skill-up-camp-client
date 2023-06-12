@@ -3,7 +3,7 @@ import photo from "../../assets/register.gif"
 import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
@@ -14,8 +14,10 @@ const Register = () => {
    const [passwordShown, setPasswordShown] = useState(false);
    const [confirmPasswordShown, setConfirmPasswordShown] = useState(false);
 
-   const { registerUser, updateUserProfile, logOut } = useContext(AuthContext);
+   const { registerUser, updateUserProfile, googleSign, logOut } = useContext(AuthContext);
    const navigate = useNavigate();
+   const location = useLocation();
+   const from = location.state?.from?.pathname || "/";
    const [error, setError] = useState('');
 
    const togglePassword = () => {
@@ -31,7 +33,7 @@ const Register = () => {
          .then(result => {
             updateUserProfile(data.name, data.photo)
                .then(() => { })
-               .catch(error => {console.log(error)})
+               .catch(error => { console.log(error) })
 
             toast.success('Registration successful')
             reset();
@@ -39,6 +41,14 @@ const Register = () => {
          .catch(error => {
             setError(error.message);
          })
+   };
+
+   const handleGoogleSignIn = () => {
+      googleSign()
+         .then(() => {
+            navigate(from, { replace: true });
+         })
+         .catch(error => setError(error.message))
    };
 
    return (
@@ -116,7 +126,7 @@ const Register = () => {
                      <div className="form-control mt-6">
                         <input type="submit" value="Register" className="btn bg-[#00b4d8] hover:bg-[#06a5c5] capitalize text-[17px] rounded-md" />
                         <ToastContainer />
-                        <button className="btn btn-outline border-cyan-500 hover:border-cyan-800 hover:bg-[#06a5c5] rounded-md text-[16px] capitalize mt-5"><FcGoogle className='mr-2 text-2xl' /> Sign in with Google</button>
+                        <button onClick={handleGoogleSignIn} className="btn btn-outline border-cyan-500 hover:border-cyan-800 hover:bg-[#06a5c5] rounded-md text-[16px] capitalize mt-5"><FcGoogle className='mr-2 text-2xl' /> Sign in with Google</button>
 
                         <small className='text-center mt-2'>Already have an account? <Link to="/login" className='text-[#00b4d8] font-semibold'>Login</Link></small>
                      </div>

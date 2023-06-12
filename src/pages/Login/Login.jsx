@@ -11,10 +11,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
    const { register, handleSubmit, formState: { errors } } = useForm();
-   // const onSubmit = data => console.log(data);
    const [passwordShown, setPasswordShown] = useState(false);
 
-   const { signIn } = useContext(AuthContext);
+   const { googleSign, signIn } = useContext(AuthContext);
    const [error, setError] = useState('');
    const navigate = useNavigate();
    const location = useLocation();
@@ -29,6 +28,14 @@ const Login = () => {
          .then((result) => {
             const user = result.user;
             // console.log(user);
+            navigate(from, { replace: true });
+         })
+         .catch(error => setError(error.message))
+   }
+
+   const handleGoogleSignIn = () => {
+      googleSign()
+         .then(() => {
             navigate(from, { replace: true });
          })
          .catch(error => setError(error.message))
@@ -72,7 +79,7 @@ const Login = () => {
                         <input type="submit" value="Login" className="btn bg-[#00b4d8] hover:bg-[#06a5c5] capitalize text-[17px] rounded-md" />
                         <ToastContainer />
 
-                        <button className="btn btn-outline border-cyan-500 hover:border-cyan-800 hover:bg-[#06a5c5] rounded-md text-[16px] capitalize mt-5"><FcGoogle className='mr-2 text-2xl' /> Sign in with Google</button>
+                        <button onClick={handleGoogleSignIn} className="btn btn-outline border-cyan-500 hover:border-cyan-800 hover:bg-[#06a5c5] rounded-md text-[16px] capitalize mt-5"><FcGoogle className='mr-2 text-2xl' /> Sign in with Google</button>
                      </div>
                      <small className='text-center mt-2'>Don&lsquo;t have account? <Link to="/register" className='text-[#00b4d8] font-semibold'>Register</Link></small>
                   </form>
