@@ -124,7 +124,7 @@ const Register = () => {
                      </div>
 
                      <div className="form-control mt-6">
-                        <input type="submit" value="Register" className="btn bg-[#00b4d8] hover:bg-[#06a5c5] capitalize text-[17px] rounded-md" />
+                        <input type="submit" value="Register" className="btn bg-[#00b4d8] hover:bg-[#06a5c5] text-white capitalize text-[16px] rounded-md" />
                         <ToastContainer />
                         <button onClick={handleGoogleSignIn} className="btn btn-outline border-cyan-500 hover:border-cyan-800 hover:bg-[#06a5c5] rounded-md text-[16px] capitalize mt-5"><FcGoogle className='mr-2 text-2xl' /> Sign in with Google</button>
 

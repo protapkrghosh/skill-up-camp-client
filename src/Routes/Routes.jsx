@@ -5,6 +5,8 @@ import LoginLayout from "../Layouts/LoginLayout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import NotFound from "../pages/NotFound/NotFound";
+import Instructors from "../pages/Instructors/Instructors";
+import Classes from "../pages/Classes/Classes";
 
 const router = createBrowserRouter([
    {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
          {
             path: "register",
             element: <Register></Register>
+         },
+         {
+            path: "instructors",
+            element: <Instructors></Instructors>
+         },
+         {
+            path: "classes",
+            element: <Classes></Classes>
          }
       ],
    },
