@@ -8,6 +8,7 @@ const Home = () => {
             <title>Skill Up Camp</title>
          </Helmet>
 
+         <Banner />
       </div>
    );
 };
