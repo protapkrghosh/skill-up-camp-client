@@ -8,7 +8,7 @@ const Instructors = () => {
    return (
       <div>
          <Helmet>
-            <title>Skill Up Camp - Instructors</title>
+            <title>Skill Up - Instructors</title>
          </Helmet>
 
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-5 pt-10 py-20" data-aos="zoom-in" data-aos-duration="1000">

@@ -1,16 +1,17 @@
 import { Helmet } from "react-helmet-async";
 import Banner from "../Banner/Banner";
 import Testimonial from "../../Testimonial/Testimonial";
-import Instructors from "../../Instructors/Instructors";
+import FeaturedInstructor from "../../FeaturedInstructor/FeaturedInstructor";
 
 const Home = () => {
    return (
       <div>
          <Helmet>
-            <title>Skill Up Camp - Home</title>
+            <title>Skill Up - Home</title>
          </Helmet>
 
          <Banner />
+         <FeaturedInstructor />
          <Testimonial />
       </div>
    );

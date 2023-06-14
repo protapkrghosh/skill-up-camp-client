@@ -30,21 +30,20 @@ const Register = () => {
 
    const onSubmit = data => {
       if (data.password !== data.confirmPassword) {
-         return alert("Password does not match")
+         return toast.error("Password does not match")
       }
 
-      // registerUser(data.email, data.password)
-      //    .then(result => {
-      //       updateUserProfile(data.name, data.photo)
-      //          .then(() => { })
-      //          .catch(error => { console.log(error) })
-
-      //       toast.success('Registration successful')
-      //       reset();
-      //    })
-      //    .catch(error => {
-      //       setError(error.message);
-      //    })
+      registerUser(data.email, data.password)
+         .then(result => {
+            updateUserProfile(data.name, data.photo)
+               .then(() => { })
+               .catch(error => { console.log(error) })
+            toast.success('Registration successful')
+            reset();
+         })
+         .catch(error => {
+            setError(error.message);
+         })
    };
 
    const handleGoogleSignIn = () => {
@@ -58,7 +57,7 @@ const Register = () => {
    return (
       <div>
          <Helmet>
-            <title>Skill Up Camp - Register</title>
+            <title>Skill Up - Register</title>
          </Helmet>
 
          <div className="hero min-h-screen pb-10 pt-32">
