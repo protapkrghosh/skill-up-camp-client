@@ -7,6 +7,7 @@ import Register from "../pages/Register/Register";
 import NotFound from "../pages/NotFound/NotFound";
 import Instructors from "../pages/Instructors/Instructors";
 import Classes from "../pages/Classes/Classes";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
    {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             path: "classes",
             element: <Classes></Classes>,
             loader: () => fetch('http://localhost:5000/classes')
+         },
+         {
+            path: "dashboard",
+            element: <Dashboard></Dashboard>
          }
       ],
    },
