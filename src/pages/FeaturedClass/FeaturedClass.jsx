@@ -8,7 +8,7 @@ const FeaturedClass = () => {
 
    useEffect(() => {
       setLoading(true);
-      fetch('http://localhost:5000/classes')
+      fetch('http://localhost:5000/featured_classes')
          .then((res) => res.json())
          .then((data) => {
             setClasses(data);
