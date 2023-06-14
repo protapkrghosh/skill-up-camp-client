@@ -43,7 +43,7 @@ const Login = () => {
    return (
       <div>
          <Helmet>
-            <title>Login | Skill Up Camp</title>
+            <title>Skill Up Camp - Login</title>
          </Helmet>
 
          <div className="hero min-h-screen pt-20">

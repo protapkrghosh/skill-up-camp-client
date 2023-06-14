@@ -1,0 +1,65 @@
+[
+   {
+      "image": "https://rb.gy/6sjll",
+      "name": "Chinese to English",
+      "instructor": "John Smith",
+      "enrolled_students": 15,
+      "course_time": "3 Week",
+      "available_seats": 5,
+      "price": 50
+   },
+   {
+      "image": "https://rb.gy/b0d12",
+      "name": "Portuguese to Bengali",
+      "instructor": "Jane Doe",
+      "enrolled_students": 12,
+      "course_time": "7 Week",
+      "available_seats": 8,
+      "price": 75
+   },
+   {
+      "image": "https://rb.gy/kgql0",
+      "name": "Russian to Spanish",
+      "instructor": "Mike Johnson",
+      "enrolled_students": 8,
+      "course_time": "1 Week",
+      "available_seats": 12,
+      "price": 60
+   },
+   {
+      "image": "https://rb.gy/6om2v",
+      "name": "Hindi to Japanese",
+      "instructor": "Sarah Anderson",
+      "enrolled_students": 10,
+      "course_time": "10 Week",
+      "available_seats": 10,
+      "price": 65
+   },
+   {
+      "image": "https://rb.gy/xivyn",
+      "name": "Zilandia To Bangla",
+      "instructor": "Robert Wilson",
+      "enrolled_students": 20,
+      "course_time": "5 Week",
+      "available_seats": 0,
+      "price": 55
+   },
+   {
+      "image": "https://rb.gy/0jpov",
+      "name": "Japanese to Korean",
+      "instructor": "Emily Davis",
+      "enrolled_students": 5,
+      "course_time": "25 Week",
+      "available_seats": 15,
+      "price": 70
+   },
+   {
+      "image": "https://rb.gy/fzvg4",
+      "name": "German to Italian",
+      "instructor": "David Thompson",
+      "enrolled_students": 18,
+      "course_time": "10 Week",
+      "available_seats": 2,
+      "price": 80
+   }
+]

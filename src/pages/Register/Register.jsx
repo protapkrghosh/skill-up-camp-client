@@ -29,18 +29,22 @@ const Register = () => {
    };
 
    const onSubmit = data => {
-      registerUser(data.email, data.password)
-         .then(result => {
-            updateUserProfile(data.name, data.photo)
-               .then(() => { })
-               .catch(error => { console.log(error) })
+      if (data.password !== data.confirmPassword) {
+         return alert("Password does not match")
+      }
 
-            toast.success('Registration successful')
-            reset();
-         })
-         .catch(error => {
-            setError(error.message);
-         })
+      // registerUser(data.email, data.password)
+      //    .then(result => {
+      //       updateUserProfile(data.name, data.photo)
+      //          .then(() => { })
+      //          .catch(error => { console.log(error) })
+
+      //       toast.success('Registration successful')
+      //       reset();
+      //    })
+      //    .catch(error => {
+      //       setError(error.message);
+      //    })
    };
 
    const handleGoogleSignIn = () => {
@@ -54,7 +58,7 @@ const Register = () => {
    return (
       <div>
          <Helmet>
-            <title>Register | Skill Up Camp</title>
+            <title>Skill Up Camp - Register</title>
          </Helmet>
 
          <div className="hero min-h-screen pb-10 pt-32">
@@ -113,6 +117,7 @@ const Register = () => {
                            <span onClick={toggleConfirmPassword} className="absolute right-14 cursor-pointer text-[18px]">{confirmPasswordShown ? <FaRegEye /> : <FaRegEyeSlash />}</span>
                         </div>
                         {errors.confirmPassword && <small className="text-rose-600 font-semibold">Confirm Password is required</small>}
+                        {errors.confirmPassword && <small className="text-rose-600 font-semibold">Password does not match</small>}
                      </div>
 
                      <div className="form-control">

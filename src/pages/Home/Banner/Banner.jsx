@@ -26,12 +26,12 @@ const Banner = () => {
          modules={[Autoplay, Pagination, Navigation]}
          className="mySwiper"
       >
-         <SwiperSlide><img src={image1} alt="" className="min-w-full h-[600px]"/></SwiperSlide>
-         <SwiperSlide><img src={image2} alt="" className="min-w-full h-[600px]"/></SwiperSlide>
-         <SwiperSlide><img src={image3} alt="" className="min-w-full h-[600px]"/></SwiperSlide>
-         <SwiperSlide><img src={image4} alt="" className="min-w-full h-[600px]"/></SwiperSlide>
-         <SwiperSlide><img src={image5} alt="" className="min-w-full h-[600px]"/></SwiperSlide>
-         <SwiperSlide><img src={image7} alt="" className="min-w-full h-[600px]"/></SwiperSlide>
+         <SwiperSlide><img src={image1} alt="" className="min-w-full h-[600px]" /></SwiperSlide>
+         <SwiperSlide><img src={image2} alt="" className="min-w-full h-[600px]" /></SwiperSlide>
+         <SwiperSlide><img src={image3} alt="" className="min-w-full h-[600px]" /></SwiperSlide>
+         <SwiperSlide><img src={image4} alt="" className="min-w-full h-[600px]" /></SwiperSlide>
+         <SwiperSlide><img src={image5} alt="" className="min-w-full h-[600px]" /></SwiperSlide>
+         <SwiperSlide><img src={image7} alt="" className="min-w-full h-[600px]" /></SwiperSlide>
       </Swiper>
    );
 };

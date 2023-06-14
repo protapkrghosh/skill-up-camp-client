@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet-async";
 
 const Classes = () => {
+
    return (
       <div>
-         <h1 className="text-2xl text-center">This is Classes Page</h1>
+         <Helmet>
+            <title>Skill Up Camp - Classes</title>
+         </Helmet>
+
       </div>
    );
 };
