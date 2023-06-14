@@ -16,7 +16,6 @@ const Home = () => {
          <Communication />
          <FeaturedInstructor />
          <FeaturedClass />
-         <Testimonial />
       </div>
    );
 };
