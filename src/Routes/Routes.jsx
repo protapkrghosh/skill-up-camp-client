@@ -35,12 +35,12 @@ const router = createBrowserRouter([
          {
             path: "instructors",
             element: <Instructors></Instructors>,
-            loader: () => fetch('http://localhost:5000/instructors')
+            loader: () => fetch('https://skill-up-camp-server-protap9ghosh.vercel.app/instructors')
          },
          {
             path: "classes",
             element: <Classes></Classes>,
-            loader: () => fetch('http://localhost:5000/classes')
+            loader: () => fetch('https://skill-up-camp-server-protap9ghosh.vercel.app/classes')
          },
          {
             path: "dashboard",

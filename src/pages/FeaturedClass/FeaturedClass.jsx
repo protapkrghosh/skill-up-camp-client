@@ -8,7 +8,7 @@ const FeaturedClass = () => {
 
    useEffect(() => {
       setLoading(true);
-      fetch('http://localhost:5000/featured_classes')
+      fetch('https://skill-up-camp-server-protap9ghosh.vercel.app/featured_classes')
          .then((res) => res.json())
          .then((data) => {
             setClasses(data);

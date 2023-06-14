@@ -6,7 +6,7 @@ const FeaturedInstructor = () => {
 
    useEffect(() => {
       setLoading(true);
-      fetch('http://localhost:5000/instructors')
+      fetch('https://skill-up-camp-server-protap9ghosh.vercel.app/instructors')
          .then((res) => res.json())
          .then((data) => {
             setInstructors(data);
