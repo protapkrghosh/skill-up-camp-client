@@ -26,7 +26,20 @@ const Banner = () => {
          modules={[Autoplay, Pagination, Navigation]}
          className="mySwiper"
       >
-         <SwiperSlide><img src={image1} alt="" className="min-w-full h-[600px]" /></SwiperSlide>
+         <SwiperSlide>
+            <img src={image1} alt="" className="min-w-full h-[600px]" />
+            <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+               <div className="text-white md:ml-16 md:w-1/2 px-5 space-y-6">
+                  <h2 className="md:text-6xl text-3xl font-semibold">Affordable Price For Car Servicing</h2>
+                  <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                  <div>
+                     <button className="btn bg-[#00b4d8] hover:bg-[#06a5c5] mr-5">Discover More</button>
+                     <button className="btn glass">Latest Project</button>
+                  </div>
+               </div>
+            </div>
+         </SwiperSlide>
+
          <SwiperSlide><img src={image2} alt="" className="min-w-full h-[600px]" /></SwiperSlide>
          <SwiperSlide><img src={image3} alt="" className="min-w-full h-[600px]" /></SwiperSlide>
          <SwiperSlide><img src={image4} alt="" className="min-w-full h-[600px]" /></SwiperSlide>
