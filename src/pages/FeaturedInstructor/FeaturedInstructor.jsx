@@ -16,7 +16,7 @@ const FeaturedInstructor = () => {
 
    return (
       <div>
-         <h1 className="text-4xl text-center font-mono mt-16">Our Featured Instructor</h1>
+         <h2 className="text-4xl text-center font-mono mt-16">Our Featured Instructor</h2>
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-5 pt-10 py-20" data-aos="zoom-in" data-aos-duration="1000">
             {
                instructors.map(instructor => <div key={instructor._id} className="card w-72 bg-base-100 shadow-md border rounded-md mx-auto">
