@@ -5,7 +5,7 @@ const Communication = () => {
          <h2 className="text-4xl text-center font-mono mt-16">Global Communication</h2>
          <p className='text-center mt-4 font-bold mb-5'>Language Fluency for <span className='text-purple-500'>Global Communication</span></p>
          <div className='grid grid-cols-1 md:grid-cols-3 gap-4 container m-auto'>
-            <div className="card w-96 bg-base-100 shadow-xl mx-auto" data-aos="zoom-in" data-aos-duration="2000">
+            <div className="card w-96 bg-base-100 shadow-xl border rounded-md mx-auto" data-aos="zoom-in" data-aos-duration="2000">
                <figure><img src="https://rb.gy/3elro" alt="Shoes" /></figure>
                <div className="card-body">
                   <h2 className="card-title text-purple-500">Mastering Multilingualism</h2>
@@ -21,7 +21,7 @@ const Communication = () => {
                </div>
 
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl mx-auto" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            <div className="card w-96 bg-base-100 shadow-xl border rounded-md mx-auto" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                <figure><img src="https://rb.gy/x1ssc" alt="Shoes" /></figure>
                <div className="card-body">
                   <h2 className="card-title text-purple-500">From Novice to Native</h2>
@@ -37,7 +37,7 @@ const Communication = () => {
                </div>
 
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl mx-auto" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            <div className="card w-96 bg-base-100 shadow-xl border rounded-md mx-auto" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                <figure><img src="https://rb.gy/sa64j" alt="Shoes" /></figure>
                <div className="card-body">
                   <h2 className="card-title text-purple-500">Language Connect</h2>
